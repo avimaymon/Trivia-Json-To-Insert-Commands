@@ -19,7 +19,7 @@
 * ### The information is recieved in JSON format and then each question is transformed into SQL INSERT command.
 * ### The order of the question is randomized and the correct answer place also get randomized.
 
-## Questions table structure:
+## My Questions table structure:
 
 ![myTable](http://i.imgur.com/JippIoR.png)
 
