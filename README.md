@@ -2,7 +2,8 @@
 ## This project can be easily modified to :
 * ### Match to your own table structure.
 * ### Fit a different Triva questions API.
-* ### Fit a other kind of JSON data API and different table structure.
+* ### Fit a different kind of JSON data API and different table structure.
+## Info
 * ### This is a simple one page website for fetching trivia question from an API and transforming data to SQL INSERT commands
 
 * ### The purpose of this project is to avoid manual insertation of questions to my MSSQL Database
