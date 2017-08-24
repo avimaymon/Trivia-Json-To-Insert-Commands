@@ -1,7 +1,7 @@
 # Trivia-Json-To-Insert-Commands
 ### This is a simple one page website for fetching trivia question from an API and transforming data to SQL INSERT commands
 
-### The purpose of this project is to avoid manual insertation of question to my MSSQL Database
+### The purpose of this project is to avoid manual insertation of questions to my MSSQL Database
 
 ## This website use this Trivia Qustion API to get questions in a JSON format : 
 ### https://opentdb.com 
@@ -21,8 +21,8 @@ EXEC sp_addtype 'Question_String', 'nvarchar (150)', 'not null'
 EXEC sp_addtype 'Question_Option', 'nvarchar (100)', 'not null'
 EXEC sp_addtype 'Category_String', 'nvarchar (30)', 'not null'
 EXEC sp_addtype 'User_String', 'nvarchar (15)', 'not null'
-GO
-
+GO` 
+`
 CREATE TABLE [Questions] (
 	[Id] [smallint] IDENTITY(1,1) NOT NULL  ,
 	[Category_Code] [smallint] ,
