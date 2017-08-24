@@ -1,4 +1,8 @@
 # Trivia-Json-To-Insert-Commands
+## This project can be easily modified to :
+* ### Match to your own table structure.
+* ### Fit a different Triva questions API.
+* ### Fit a other kind of JSON data API and different table structure.
 * ### This is a simple one page website for fetching trivia question from an API and transforming data to SQL INSERT commands
 
 * ### The purpose of this project is to avoid manual insertation of questions to my MSSQL Database
@@ -15,7 +19,6 @@
 * ### The order of the question is randomized and the correct answer place also get randomized.
 
 ## Questions table structure:
-
 
 ![myTable](http://i.imgur.com/JippIoR.png)
 
