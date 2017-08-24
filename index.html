@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Trivia to sql</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<body>
+    <h3 id="boom"></h3>
+<script>
+    $.ajax({
+  dataType: 'json',
+  url: "https://opentdb.com/api.php?amount=50&category=32&type=multiple",
+  success: function(data)
+  {
+      var myData = data.results;
+      var count=1;
+      var str1;
+       for(let i=0;i<myData.length;i++)
+       {
+           str1="";
+         //  console.log('Data question ' + i + ' : ' + myData[i].question + `,` + myData[i].incorrect_answers[0] +
+         //   `,` + myData[i].incorrect_answers[1] + `,` + myData[i].incorrect_answers[2] + `,` + myData[i].correct_answer);
+          switch(count)
+          {
+              case 4 : 
+              {
+                str1 = `
+                     Insert dbo.Questions (Category_Code,Question_Text,Option1,Option2,Option3,Option4,Answer) `;
+                     str1+="<br/>" ;
+                str1 += `
+                     Values (5555,'` + myData[i].question + `','` + myData[i].incorrect_answers[0] +
+           `','` + myData[i].incorrect_answers[1] + `','` + myData[i].incorrect_answers[2] + `','` + myData[i].correct_answer + `',` + `4` + `)`
+                  break;
+              }
+              case 3 : 
+              {
+                str1 = `
+                     Insert dbo.Questions (Category_Code,Question_Text,Option1,Option2,Option3,Option4,Answer) `;
+                     str1+="<br/>" ;
+                     str1+=`
+                     Values (5555,'` + myData[i].question + `','` + myData[i].incorrect_answers[0] +
+           `','` + myData[i].incorrect_answers[1] + `','` + myData[i].correct_answer + `','` + myData[i].incorrect_answers[2] + `',` + `3` + `)`
+                  break;
+              }
+              case 2 : 
+              {
+                str1 = `
+                     Insert dbo.Questions (Category_Code,Question_Text,Option1,Option2,Option3,Option4,Answer) `;
+                     str1+="<br/>" ;
+                     str1+=`
+                     Values (5555,'` + myData[i].question + `','` + myData[i].incorrect_answers[0] +
+           `','` + myData[i].correct_answer + `','` + myData[i].incorrect_answers[2] + `','` + myData[i].incorrect_answers[1] + `',` + `2` + `)`
+                  break;
+              }
+              case 1 : 
+              {
+                str1 = `
+                     Insert dbo.Questions (Category_Code,Question_Text,Option1,Option2,Option3,Option4,Answer) `;
+                     str1+="<br/>" ;
+                     str1+=`
+                     Values (5555,'` + myData[i].question + `','` + myData[i].correct_answer +
+           `','` + myData[i].incorrect_answers[1] + `','` + myData[i].incorrect_answers[2] + `','` + myData[i].incorrect_answers[0] + `',` + `1` + `)`
+                  break;
+              }
+          }
+        $('#boom').append("<br/><br/>" + str1) ;
+        
+        if(count<4)
+        count++;
+        else
+        count=1;
+     }
+      //$('#boom').text += str1;
+      
+      // Insert dbo.Questions (Category_Code,Question_Text,Option1,Option2,Option3,Option4,Answer) 
+       //Values (1,'What is the national animal of Scotland?','Sheep','Unicorn','Dinosour','Tiger',2)
+
+    //$('#boom').text(data.results.length);
+  }
+});
+</script>
+</body>
+
+</html>
