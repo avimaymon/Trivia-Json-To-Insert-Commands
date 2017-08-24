@@ -10,10 +10,10 @@
 
 * ### This website use this Trivia Qustion API to get questions in a JSON format : 
 #### https://opentdb.com 
-## By using this url structure : 
-#### https://opentdb.com/api.php?amount=[Amount_Of_Questions]&category=[Category_Id]&difficulty=[Difficulty]&type=[Multiple Answers/True-False Answers]
+### By using this url structure : 
+* #### https://opentdb.com/api.php?amount=[Amount_Of_Questions]&category=[Category_Id]&difficulty=[Difficulty]&type=[Multiple Answers/True-False Answers]
 ### Specify your parameters in the index.html url field
-#### An example url : https://opentdb.com/api.php?amount=10&category=15&difficulty=easy&type=multiple
+* #### An example url : https://opentdb.com/api.php?amount=10&category=15&difficulty=easy&type=multiple
 ## Information Handling
 * ### The information is fetch via AJAX GET request to the chosen url of the API
 * ### The information is recieved in JSON format and then each question is transformed into SQL INSERT command.
